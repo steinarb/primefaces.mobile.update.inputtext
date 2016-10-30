@@ -32,18 +32,6 @@
    <scope>provided</scope>
   </dependency>
   <dependency>
-   <groupId>no.steria.osgi.jsr330activator</groupId>
-   <artifactId>jsr330activator.implementation</artifactId>
-   <version>1.0.1</version>
-   <scope>provided</scope>
-  </dependency>
-  <dependency>
-   <groupId>javax.inject</groupId>
-   <artifactId>javax.inject</artifactId>
-   <version>1</version>
-   <scope>compile</scope>
-  </dependency>
-  <dependency>
    <groupId>org.hamcrest</groupId>
    <artifactId>hamcrest-library</artifactId>
    <version>1.3</version>
@@ -152,7 +140,6 @@
       <_wab>src/main/webapp</_wab>
       <Web-ContextPath>testapp</Web-ContextPath>
       <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-      <Bundle-Activator>no.steria.osgi.jsr330activator.Jsr330Activator</Bundle-Activator>
       <Bundle-Version>${project.version}</Bundle-Version>
       <Import-Package>
        javax.el,
@@ -177,7 +164,6 @@
        *
       </Import-Package>
       <Export-Package>!*</Export-Package>
-      <Embed-Dependency>jsr330activator.implementation;inline=true,javax.inject;inline=true,*;scope=runtime,type!=pom</Embed-Dependency>
       <Bundle-Classpath>WEB-INF/classes, WEB-INF/lib</Bundle-Classpath>
       <Require-Bundle>
        org.primefaces;visibility:=reexport
