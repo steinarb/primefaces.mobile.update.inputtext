@@ -5,11 +5,12 @@ import java.util.Map;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
 @FacesConverter("jobConverter")
-public class JobConverter {
+public class JobConverter implements Converter {
     private static Map<String, Job> registry = new HashMap<String, Job>();
 
     public Object getAsObject(FacesContext context, UIComponent component, String value) throws ConverterException {
