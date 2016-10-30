@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+
+ <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+ <h:head>
+ </h:head>
+
+ <h:body>
+  <p>Hello mobile world</p>
+  <pm:page id="page">
+   <pm:header title="Select job"></pm:header>
+
+   <pm:content>
+
+    <h:form id="test">
+     <p:panelGrid columns="3" styleClass="ui-responsive" >
+      <p:selectOneMenu id="jobtype" value="#{testbean.newJobType}" converter="jobbConverter">
+       <f:selectItem itemLabel="Choose job" itemValue="" noSelectionOption="true" />
+       <f:selectItems value="#{testbean.jobTypes}" var="jobtype2" itemValue="#{jobtype2}" itemLabel="#{jobtype2.name}"/>
+       <p:ajax event="change" update="amount" listener="#{testbean.newJobTypeSelected}"/>
+      </p:selectOneMenu>
+      <h:inputText id="amount" value="#{testbean.newJobWages}" required="true" readonly="true"/>
+      <p:commandButton value="Registrer jobb" update="jobtype amount" actionListener="#{testbean.registerNewJob}" />
+     </p:panelGrid>
+    </h:form>
+   </pm:content>
+  </pm:page>
+  <p>Hello again mobile world</p>
+ </h:body>
+</html>
