@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
+import javax.faces.event.AjaxBehaviorEvent;
 
 @ManagedBean(name = "testbean")
 @ViewScoped
@@ -44,6 +45,12 @@ public class TestBean {
 
     public List<Job> getJobTypes() {
         return jobTypes;
+    }
+
+    public void newJobTypeSelected(final AjaxBehaviorEvent event) {
+        if (newJobType != null) {
+            newJobWages = newJobType.getAmount();
+        }
     }
 
     public void registerNewJob(ActionEvent event) {
