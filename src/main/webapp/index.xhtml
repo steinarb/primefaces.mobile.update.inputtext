@@ -21,7 +21,7 @@
 
     <h:form id="test">
      <p:panelGrid columns="3" styleClass="ui-responsive" >
-      <p:selectOneMenu id="jobtype" value="#{testbean.newJobType}" converter="jobbConverter">
+      <p:selectOneMenu id="jobtype" value="#{testbean.newJobType}" converter="jobConverter">
        <f:selectItem itemLabel="Choose job" itemValue="" noSelectionOption="true" />
        <f:selectItems value="#{testbean.jobTypes}" var="jobtype2" itemValue="#{jobtype2}" itemLabel="#{jobtype2.name}"/>
        <p:ajax event="change" update="amount" listener="#{testbean.newJobTypeSelected}"/>
