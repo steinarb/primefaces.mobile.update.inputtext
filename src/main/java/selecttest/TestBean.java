@@ -32,12 +32,12 @@ public class TestBean {
         this.newJobType = newJobType;
     }
 
-    public String getNewJobWages() {
-        return Double.valueOf(newJobWages).toString();
+    public double getNewJobWages() {
+        return newJobWages;
     }
 
-    public void setNewJobWages(String newJobWages) {
-        this.newJobWages = Double.parseDouble(newJobWages);
+    public void setNewJobWages(double newJobWages) {
+        this.newJobWages = newJobWages;
     }
 
     public List<Job> getJobTypes() {
@@ -56,7 +56,7 @@ public class TestBean {
 
     private void clearNewJobValues() {
         setNewJobType(null);
-        setNewJobWages("0.0");
+        setNewJobWages(0);
     }
 
 }
