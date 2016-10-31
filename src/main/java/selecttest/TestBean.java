@@ -30,9 +30,6 @@ public class TestBean {
 
     public void setNewJobType(Job newJobType) {
         this.newJobType = newJobType;
-        if (newJobType != null) {
-            setNewJobWages(newJobType.getAmount());
-        }
     }
 
     public double getNewJobWages() {
